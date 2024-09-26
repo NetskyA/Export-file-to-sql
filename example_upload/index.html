@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert CSV/JSON To SQL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <div class="container mx-auto mt-12">
+        <div class="text-center mb-8">
+            <h2 class="text-4xl font-bold text-purple-600">Convert CSV To SQL</h2>
+            <p class="text-gray-600 mt-2">Add your file and convert it to SQL effortlessly. Upload up to 5MB for free.</p>
+        </div>
+
+        <div class="max-w-xl mx-auto bg-white rounded-lg shadow-lg p-8">
+            <div class="flex justify-center space-x-4 mb-6">
+                <button id="csvBtn" class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-8 rounded">
+                    CSV
+                </button>
+                <!-- <button id="jsonBtn" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded">
+                    JSON
+                </button> -->
+            </div>
+
+            <div class="border-2 border-dashed border-purple-500 rounded-lg p-8 text-center">
+                <label for="fileUpload" class="cursor-pointer flex flex-col items-center">
+                    <img src="Assets/upload.png" alt="" class="w-11 mb-4" srcset="">
+                    <span class="text-gray-500">Select excel file, maximum 10 mb</span>
+                </label>
+                <input type="file" id="fileUpload" class="hidden" />
+            </div>
+
+            <!-- Checkbox for custom file name -->
+            <div class="mt-6">
+                <label class="inline-flex items-center">
+                    <input type="checkbox" id="customNameCheckbox" class="form-checkbox text-purple-600">
+                    <span class="ml-2 text-gray-700">Use custom file name</span>
+                </label>
+            </div>
+
+            <!-- Text input for custom file name -->
+            <div id="customNameInput" class="mt-4 hidden">
+                <label for="fileName" class="block text-gray-700">File Name (without extension):</label>
+                <input type="text" id="fileName" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500" placeholder="Enter file name">
+            </div>
+
+            <button id="convertBtn" class="mt-6 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded w-full">
+                Convert to SQL
+            </button>
+
+            <div id="output" class="mt-8 p-2 rounded-lg text-left overflow-auto">
+                <div class="text-xs text-center">
+                    Created by NetSkyA
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load the XLSX library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+
+    <!-- Load external JavaScript -->
+    <script src="Javascript/script.js"></script>
+    
+
+</body>
+</html>
